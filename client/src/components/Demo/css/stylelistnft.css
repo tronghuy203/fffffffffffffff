@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* In stylelistnft.css */
+.header-section {
+    text-align: center;
+    margin-bottom: -20px;
+    display: block; /* Space between header and product list */
+    background-color: black;
+
+}
+/* Target the <b> inside the <h2> */
+.header-section h2 b {
+    color: #ffffff;
+}
+
+/* Target the <p> inside the .header-section */
+.header-section p {
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container for the list of items */
+.product-list-items {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.pinimg.com/736x/e7/f2/b4/e7f2b47e656a2babc353fe062aee43db.jpg');
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns in the row */
+    gap: 20px; /* Space between the items */
+    width: 1524px; /* Ensure the container takes up the full width */
+    box-sizing: border-box; /* Include padding in the element's width */
+}
+
+/* Each individual product card */
+.product-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%; /* Ensure the card takes up the full width of its grid cell */
+}
+
+/* Styling for the card title */
+.product-item h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styling for the description and other text */
+.product-item p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Button styling */
+.product-item button {
+    font-size: 16px;
+    padding: 10px;
+    width: 100%; /* Ensure the button fills the card width */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .product-list-items {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-list-items {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+    }
+}

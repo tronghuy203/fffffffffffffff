@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.demo-container {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* overflow-y: hidden; */
+  width: auto;
+}
+
+/* Header */
+.custom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000; /* Màu nền đen */
+  border-bottom: 0.0001px solid #414141;
+  padding: 10px 20px;
+  height: 70px;
+}
+
+.custom-brand {
+  text-decoration: none;
+}
+
+.custom-logo {
+  height: 80px;
+}
+
+.custom-nav {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  justify-content: center; /* Center the nav items horizontally */
+  width: 100%; /* Ensure it spans the full width */
+}
+
+
+.custom-link {
+  text-decoration: none;
+  color: #ffffff; /* Màu chữ trắng */
+  transition: color 0.3s ease;
+}
+
+.custom-link.active {
+  font-weight: bold;
+  color: #0a84dc; /* Màu active */
+}
+
+.custom-account-display {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Đẩy phần hiển thị tài khoản sang bên phải */
+}
+
+.custom-profile-image {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.custom-account-text {
+  color: #ffffff;
+  font-weight: bold;
+}
+.nft-image {
+  width: 250px; /* Adjust the size as needed */
+  height: auto; /* Keep the aspect ratio */
+  object-fit: cover; /* Ensures the image scales correctly */
+  margin-top: 10px; /* Optional spacing */
+}
+
+/* Main content */
+
+/* Footer */
+.footer {
+  padding: 20px 0;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.footer h6 {
+  font-size: 20px;
+  color: #53b7ff;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.footer .footer-link {
+  color: #f9fafa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer .footer-link:hover {
+  color: #53b7ff;
+}
+
+.footer-text {
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.text-center {
+  text-align: start;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+  display: block;
+}
+
+.account-dropdown {
+  position: absolute;
+  right: 0; /* Đưa dropdown sang bên phải */
+  z-index: 1000;
+}

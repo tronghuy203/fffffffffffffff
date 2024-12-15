@@ -3,10 +3,11 @@ import Web3 from "web3";
 import EthContext from "./EthContext";
 import { reducer, actions, initialState } from "./state";
 
-export const ARTIFACTS = {
-  SimpleStorage: require("../../contracts/SimpleStorage.json"),
-}
 
+export const ARTIFACTS = {
+  Marketplace: require("../../contracts/Marketplace.json"),
+  MyCollection: require("../../contracts/MyCollection.json"),
+}
 
 function EthProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -15,7 +16,7 @@ function EthProvider({ children }) {
     const ganacheUrl = process.env.REACT_APP_DEFAULT_RPC;
     const wsProvider = new Web3.providers.WebsocketProvider(ganacheUrl);
     const web3 = new Web3(wsProvider);
-    return { web3, accounts: []}
+    return { web3, accounts: [] }
   }
 
   async function initWeb3WithWindowEthereum() {
@@ -57,9 +58,7 @@ function EthProvider({ children }) {
             console.error(err);
           }
         }
-        console.log('contracts', contracts)
-        console.log('accounts', accounts)
-        console.log('networkID', networkID)
+
         dispatch({
           type: actions.init,
           data: {web3, accounts, networkID, contracts }
@@ -67,14 +66,18 @@ function EthProvider({ children }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-  useEffect(() => {
-    const tryInit = async () => {
-      try {
-        init();
-      } catch (err) {
-        console.error(err);
-      }
-    };
+    useEffect(() => {
+      const tryInit = async () => {
+        try {
+          const artifacts = {
+            Marketplace: require("../../contracts/Marketplace.json"),
+            MyCollection: require("../../contracts/MyCollection.json"),
+          }
+          init(artifacts);
+        } catch (err) {
+          console.error(err);
+        }
+      };
 
     tryInit();
     
